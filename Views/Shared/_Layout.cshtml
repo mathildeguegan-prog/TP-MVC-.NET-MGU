@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link href="~/resources/index.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header>
+        <img src="~/resources/groupehn.png" class="image " alt="GroupeHN" />
+        <h1>@ViewData["HeaderTitle"]</h1>
+    </header>
+    <nav>
+@RenderSection("Menu", required: false)
+    </nav>
+    <section>
+        @RenderBody()
+    </section>
+</body>
+</html>

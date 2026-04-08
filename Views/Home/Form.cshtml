@@ -1,0 +1,117 @@
+﻿@{ViewData["HeaderTitle"] = "Bienvenue chez TP HN";}
+
+@section Menu {
+    <ul>
+        <li><a href="/Home/Index">Acceuil</a></li>
+        <li><a href="/Home/Index/OpinionList">Liste avis</a></li>
+    </ul>
+}
+
+@model TPLOCAL1.Models.FormModel
+<section>
+<form asp-action="ValidationForm" method="post">
+    <table border="1">
+
+        <tr>
+            <th colspan="2">Informations personnelles</th>
+        </tr>
+
+        <tr>
+            <td>Nom</td>
+            <td><input type="text" name="Nom" /></td>
+        </tr>
+
+        <tr>
+            <td>Prénom</td>
+            <td><input type="text" name="Prenom" /></td>
+        </tr>
+
+        <tr>
+            <td>Genre</td>
+            <td>
+                <select name="Genre">
+                    <option>Sélectionner</option>
+                    <option>Homme</option>
+                    <option>Femme</option>
+                    <option>Autre</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Adresse</td>
+            <td><input type="text" name="Adresse" /></td>
+        </tr>
+
+        <tr>
+            <td>Code postal</td>
+            <td><input type="text" name="CodePostal" /></td>
+        </tr>
+
+        <tr>
+            <td>Ville</td>
+            <td><input type="text" name="Ville" /></td>
+        </tr>
+
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="Email" /></td>
+        </tr>
+
+    </table>
+
+    <br />
+
+    <table border="1">
+
+        <tr>
+            <th colspan="2">Informations formation</th>
+        </tr>
+
+        <tr>
+            <td>Date début</td>
+            <td><input type="date" name="DateFormation" /></td>
+        </tr>
+
+        <tr>
+            <td>Type formation</td>
+            <td>
+                <select name="TypeFormation">
+                    <option>Sélectionner</option>
+                    <option>Cobol</option>
+                    <option>Objet</option>
+                    <option>Double compétence</option>
+                </select>
+            </td>
+        </tr>
+
+    </table>
+
+    <br />
+
+    <table border="1">
+
+        <tr>
+            <th colspan="2">Avis formation</th>
+        </tr>
+
+        <tr>
+            <td>Cobol</td>
+            <td><input type="text" name="AvisCobol" /></td>
+        </tr>
+
+        <tr>
+            <td>C#</td>
+            <td><input type="text" name="AvisCSharp" /></td>
+        </tr>
+
+    </table>
+
+    <br />
+
+    <input type="submit" value="Valider" />
+
+</form>
+
+</section>
+

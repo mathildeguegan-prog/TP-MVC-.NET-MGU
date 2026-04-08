@@ -1,0 +1,36 @@
+﻿@{ViewData["HeaderTitle"] = "Liste des avis";}
+@section Menu {
+    <ul>
+        <li><a href="/Home/Index">Acceuil</a></li>
+        <li><a href="/Home/Index/Form">Formulaire</a></li>
+    </ul>
+}
+@model List<TPLOCAL1.Models.Opinion>
+
+@if (Model == null || Model.Count ==0)
+        {
+            <p>Aucun avis disponible</p>
+        }
+else {
+<table border="1">
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Avis</th>
+    </tr>
+
+    @foreach (var item in ViewBag.List)
+    {
+        <tr>
+            <td>@item.Nom</td>
+            <td>@item.Prenom</td>
+            <td style="color:@(item.AvisDonne == "O" ? "green" : "red")">
+                @(item.AvisDonne == "O" ? "Oui" : "Non")
+            </td>
+        </tr>
+    }
+</table>
+}
+
+
+
