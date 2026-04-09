@@ -1,4 +1,6 @@
-﻿@{ViewData["HeaderTitle"] = "Liste des avis";}
+﻿
+
+@{ViewData["HeaderTitle"] = "Liste des avis";}
 @section Menu {
     <ul>
         <li><a href="/Home/Index">Acceuil</a></li>
@@ -19,13 +21,13 @@ else {
         <th>Avis</th>
     </tr>
 
-    @foreach (var item in ViewBag.List)
+    @foreach (var item in Model)
     {
         <tr>
-            <td>@item.Nom</td>
-            <td>@item.Prenom</td>
-            <td style="color:@(item.AvisDonne == "O" ? "green" : "red")">
-                @(item.AvisDonne == "O" ? "Oui" : "Non")
+            <td>@item.LastName</td>
+            <td>@item.FirstName</td>
+            <td style="background-color:@(item.OpinionGiven == "O" ? "green" : "red")">
+                @(item.OpinionGiven == "O" ? "Oui" : "Non")
             </td>
         </tr>
     }

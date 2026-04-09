@@ -17,12 +17,14 @@ namespace TPLOCAL1.Models
         [Required(ErrorMessage = "L'adresse est requise")]
         public string? Adresse { get; set; }
 
+        [Required(ErrorMessage = "Le code postal est requis")]
         [RegularExpression(@"^[0-9]{5}$", ErrorMessage = "Code postal invalide")]
         public string? CodePostal { get; set; }
 
         [Required(ErrorMessage = "La ville est requise")]
         public string? Ville { get; set; }
 
+        [Required(ErrorMessage = "L'adresse mail est requise")]
         [EmailAddress(ErrorMessage = "Email invalide")]
         public string? Email { get; set; }
 
