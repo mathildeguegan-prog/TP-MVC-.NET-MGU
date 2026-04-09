@@ -28,6 +28,7 @@ namespace TPLOCAL1.Models
         [EmailAddress(ErrorMessage = "Email invalide")]
         public string? Email { get; set; }
 
+        [Range(typeof(DateTime), "01/01/1900","01/01/2021", ErrorMessage = "La date doit être inferieur au 01/01/2021")]
         [DataType(DataType.Date)]
         public DateTime DateFormation { get; set; }
 

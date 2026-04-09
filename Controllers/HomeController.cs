@@ -23,7 +23,7 @@ namespace TPLOCAL1.Controllers
                 {
                     case "OpinionList":
                         OpinionList opList = new();
-                        string path = Path.Combine(Directory.GetCurrentDirectory(), "C:\\Users\\Formation\\Desktop\\TP MVC.NET\\XlmFile\\DataAvis.xml");
+                        string path = Path.Combine(Directory.GetCurrentDirectory(), "XlmFile/DataAvis.xml");
 
                         List<Opinion> list = opList.GetAvis(path);
 
@@ -46,16 +46,16 @@ namespace TPLOCAL1.Controllers
         [HttpPost]
         public ActionResult ValidationFormulaire(FormModel model)
         {
-            if (string.IsNullOrWhiteSpace(model.Nom) ||
-    string.IsNullOrWhiteSpace(model.Prenom) ||
-    string.IsNullOrWhiteSpace(model.Email))
+            if (!ModelState.IsValid)
             {
-                ViewBag.Error = "Veuillez remplir tous les champs obligatoires";
-
                 return View("Form", model);
             }
-            
+
             return View("ValidationFormulaire", model);
+
+        }
+            
+            
 
             //TODO : test if model's fields are set
             //if not, display an error message and stay on the form page
@@ -63,4 +63,3 @@ namespace TPLOCAL1.Controllers
 
         }
     }
-}
